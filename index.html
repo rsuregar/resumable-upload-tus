@@ -1,0 +1,21 @@
+<!-- 1. Add CSS to `<head>` -->
+    <link
+    href="https://releases.transloadit.com/uppy/v4.13.0/uppy.min.css"
+    rel="stylesheet"
+  />
+  
+  <!-- 2. Initialize -->
+  <div id="uppy"></div>
+  
+  <script type="module">
+    import {
+      Uppy,
+      Dashboard,
+      Tus,
+    } from 'https://releases.transloadit.com/uppy/v4.13.0/uppy.min.mjs';
+  
+    const uppy = new Uppy();
+    uppy.use(Dashboard, { target: '#uppy', inline: true });
+    uppy.use(Tus, { endpoint: '/files' });
+  </script>
+  
